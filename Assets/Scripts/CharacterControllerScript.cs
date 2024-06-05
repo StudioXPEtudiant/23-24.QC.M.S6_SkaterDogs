@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharacterControllerScript : MonoBehaviour
 {
     public Camera playerCamera;
-    [SerializeField]public float walkSpeed = 12f;
+    [SerializeField]public float walkSpeed = 6f;
     [SerializeField]public float runSpeed = 12f;
     [SerializeField]public float jumpPower = 7f;
     public float gravity = 5f;
