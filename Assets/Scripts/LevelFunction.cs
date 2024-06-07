@@ -5,7 +5,7 @@ using TMPro;
 
 public class LevelFunction: MonoBehaviour
 {
-    [SerializeField]   public int pointsNeededToLevelUp;
+    [SerializeField]   private int pointsNeededToLevelUp;
    [SerializeField] public int points = 0;
    [SerializeField] public int level = 0; 
     public TMP_Text textNiveau;
