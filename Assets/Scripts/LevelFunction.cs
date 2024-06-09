@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using TMPro;
 
@@ -22,9 +21,5 @@ public class LevelFunction: MonoBehaviour
             pointsNeededToLevelUp = pointsNeededToLevelUp + 5; 
         }
     }
-
-    void AddLevel()
-    {
-        
-    }
+    
 }
