@@ -9,8 +9,8 @@ public class CatMovementAI : MonoBehaviour
     public Front script2;
    [SerializeField] private GameObject _cat;
     public Right script3;
-    private Vector3 _rot = new Vector3(0, 2, 0);
-    private Vector3 _rot2 = new Vector3(0, -2, 0);
+    private Vector3 _rot = new Vector3(0, 3, 0);
+    private Vector3 _rot2 = new Vector3(0, -3, 0);
     void Update()
     {
         if (script1.left == true)
@@ -41,7 +41,7 @@ public class CatMovementAI : MonoBehaviour
             {
                 if (script4.stop == false)
                 {
-                    _cat.transform.position += transform.forward * Time.deltaTime * 6;
+                    _cat.transform.position += transform.forward * Time.deltaTime * 10;
                 }
                 
             }
