@@ -1622,6 +1622,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd16d16464ec7c541b079e89e034e83a, type: 3}
+--- !u!1 &904680292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8513859187771203891, guid: fd16d16464ec7c541b079e89e034e83a, type: 3}
+  m_PrefabInstance: {fileID: 904680291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &904680293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: fd16d16464ec7c541b079e89e034e83a, type: 3}
+  m_PrefabInstance: {fileID: 904680291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &904680294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: fd16d16464ec7c541b079e89e034e83a, type: 3}
+  m_PrefabInstance: {fileID: 904680291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &904680295
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904680292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7387706064836869012, guid: fd16d16464ec7c541b079e89e034e83a, type: 3}
+--- !u!64 &904680296
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904680293}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: fd16d16464ec7c541b079e89e034e83a, type: 3}
+--- !u!65 &904680297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904680294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.019999996, z: 0.019999996}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &961712370
 GameObject:
   m_ObjectHideFlags: 0
