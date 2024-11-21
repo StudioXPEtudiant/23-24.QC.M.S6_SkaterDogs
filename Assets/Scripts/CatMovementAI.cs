@@ -37,7 +37,7 @@ public class CatMovementAI : MonoBehaviour
         
         
         
-            if (script2.front == true)
+           /* if (script2.front == true)
             {
                 if (script4.stop == false)
                 {
@@ -45,6 +45,6 @@ public class CatMovementAI : MonoBehaviour
                 }
                 
             }
-        
+        */
     }
 }

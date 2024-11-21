@@ -12,8 +12,7 @@ public class CharacterControllerScript : MonoBehaviour
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
     [SerializeField]public float defaultHeight = 2f;
-    [SerializeField]public float crouchHeight = 1f;
-    [SerializeField]public float crouchSpeed = 3f;
+    
 
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
@@ -22,7 +21,9 @@ public class CharacterControllerScript : MonoBehaviour
     private bool canMove = true;
 
     void Start()
-    {
+    { 
+        walkSpeed = 6f;
+        runSpeed = 12f;
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -52,20 +53,7 @@ public class CharacterControllerScript : MonoBehaviour
         {
             moveDirection.y -= gravity * Time.deltaTime;
         }
-
-        if (Input.GetKey(KeyCode.R) && canMove)
-        {
-            characterController.height = crouchHeight;
-            walkSpeed = crouchSpeed;
-            runSpeed = crouchSpeed;
-
-        }
-        else
-        {
-            characterController.height = defaultHeight;
-            walkSpeed = 6f;
-            runSpeed = 12f;
-        }
+        
 
         characterController.Move(moveDirection * Time.deltaTime);
 
