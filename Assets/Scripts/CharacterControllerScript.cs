@@ -1,17 +1,19 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class CharacterControllerScript : MonoBehaviour
 {
+    [SerializeField] private int dogChangeNumber;
     public Camera playerCamera;
-    [SerializeField]public float walkSpeed = 6f;
-    [SerializeField]public float runSpeed = 12f;
-    [SerializeField]public float jumpPower = 7f;
+    [SerializeField] public float walkSpeed = 6f;
+    [SerializeField] public float runSpeed = 12f;
+    [SerializeField] public float jumpPower = 7f;
     public float gravity = 5f;
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
-    [SerializeField]public float defaultHeight = 2f;
+    [SerializeField] public float defaultHeight = 2f;
     
 
     private Vector3 moveDirection = Vector3.zero;
@@ -21,7 +23,7 @@ public class CharacterControllerScript : MonoBehaviour
     private bool canMove = true;
 
     void Start()
-    { 
+    {
         walkSpeed = 6f;
         runSpeed = 12f;
         characterController = GetComponent<CharacterController>();
@@ -53,7 +55,7 @@ public class CharacterControllerScript : MonoBehaviour
         {
             moveDirection.y -= gravity * Time.deltaTime;
         }
-        
+
 
         characterController.Move(moveDirection * Time.deltaTime);
 
@@ -64,6 +66,10 @@ public class CharacterControllerScript : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
-    }
-}
+   
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    
+    }
+        
+}
