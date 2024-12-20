@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
+    
     public float jumpForce = 5f; 
     public bool isGrounded = true;
     public Transform groundCheck; 
@@ -23,15 +24,20 @@ public class Jump : MonoBehaviour
         float heightDifference = player.position.y - transform.position.y;
         if (heightDifference > 0.55 && isGrounded)
         {
-            JumpAction();
+            
+                JumpAction();
         }
     }
 
     void JumpAction()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if(distanceToPlayer < 10) 
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+           
+        
+             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+                    if(distanceToPlayer < 10) 
+                        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        
+       
     }
 
 }

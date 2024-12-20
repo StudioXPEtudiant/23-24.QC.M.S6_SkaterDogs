@@ -22,7 +22,10 @@ public class FloorIsLavaEasterEgg : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        lava.SetActive(true);
-        UI.SetActive(true);
+        if (other.CompareTag("Player"))
+        {
+            lava.SetActive(true);
+            UI.SetActive(true);
+        }
     }
 }

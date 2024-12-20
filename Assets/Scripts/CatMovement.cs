@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class CatMovement : MonoBehaviour
 {
+ 
  [SerializeField] private GameObject extendedSearchRange;
  [SerializeField]private float jumpForce = 5f; 
  [SerializeField]private Rigidbody rb;

@@ -9,10 +9,12 @@ public class StopLava : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-       
-        lava.SetActive(false);
-        UI.SetActive(false);
-        
-               
+        if (other.CompareTag("Player"))
+        {
+            lava.SetActive(false);
+            UI.SetActive(false);
+        }
+
+
     }
 }

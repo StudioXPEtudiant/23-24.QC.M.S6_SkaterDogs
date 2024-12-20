@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class CharacterControllerScript : MonoBehaviour
 {
+   [SerializeField] public ChangeDog dog;
     [SerializeField] private int dogChangeNumber;
     public Camera playerCamera;
     [SerializeField] public float walkSpeed = 6f;
@@ -13,7 +14,7 @@ public class CharacterControllerScript : MonoBehaviour
     public float gravity = 5f;
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
-    [SerializeField] public float defaultHeight = 2f;
+    [SerializeField] public float defultHight = 2f;
     
 
     private Vector3 moveDirection = Vector3.zero;
@@ -32,8 +33,37 @@ public class CharacterControllerScript : MonoBehaviour
     }
 
     void Update()
-    {
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
+    { 
+        if (dog.dogNumber==1)
+        {
+            characterController.height = 2.8f;
+            characterController.radius = 0.5f;
+            characterController.center = new Vector3(0f, 0.55f, 0f);
+            jumpPower = 10;
+            walkSpeed = 10;
+            runSpeed = 20;
+        } 
+        if (dog.dogNumber==2)
+        {
+            characterController.height = 3.3f; 
+            characterController.radius = 0.7f;
+            characterController.center = new Vector3(0f, 0.85f, 0f);
+            jumpPower = 15;
+            walkSpeed = 6;
+            runSpeed = 12;
+        }
+   
+        if (dog.dogNumber==3)
+        {
+            characterController.height = 3.85f;
+            characterController.radius = 1f;
+            characterController.center = new Vector3(0f, 1.1f, 0f);
+            jumpPower = 10;
+            walkSpeed = 4;
+            runSpeed = 8;
+}
+
+Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
         bool isRunning = Input.GetKey(KeyCode.LeftShift);

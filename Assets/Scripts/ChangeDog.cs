@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class ChangeDog : MonoBehaviour
 {
+    [SerializeField]bool canChange;
+    [SerializeField] private GameObject dog1;
+    [SerializeField] private GameObject dog2;
+    [SerializeField] private GameObject dog3;
     [SerializeField] private int dogSelect;
-   [SerializeField] private int dogNumber;
+   [SerializeField] public int dogNumber;
    [SerializeField] private RectTransform button1;
    [SerializeField] private GameObject b1v1;
    [SerializeField] private GameObject b1v2;
@@ -22,7 +26,7 @@ public class ChangeDog : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {if(canChange){
         if (Input.GetKeyDown(KeyCode.D))
         {
             if (dogNumber == 1)
@@ -50,6 +54,7 @@ public class ChangeDog : MonoBehaviour
                 dogSelect = 1;
             }
         }
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             if (dogNumber == 1)
@@ -60,6 +65,7 @@ public class ChangeDog : MonoBehaviour
                 b3v2.SetActive(true);
                 dogSelect = 3;
             }
+
             if (dogNumber == 2)
             {
                 b3v1.SetActive(true);
@@ -68,6 +74,7 @@ public class ChangeDog : MonoBehaviour
                 b1v2.SetActive(true);
                 dogSelect = 1;
             }
+
             if (dogNumber == 3)
             {
                 b1v1.SetActive(true);
@@ -77,6 +84,7 @@ public class ChangeDog : MonoBehaviour
                 dogSelect = 2;
             }
         }
+    }
         
         
         
@@ -84,14 +92,48 @@ public class ChangeDog : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            
             button1.gameObject.SetActive(false);
             button2.gameObject.SetActive(false);
             button3.gameObject.SetActive(false);
-            dogNumber=dogSelect;
+            if (canChange)
+            {
+                dogNumber = dogSelect;
+
+                if (dogNumber == 1)
+                {
+                    dog1.SetActive(true);
+                }
+                else
+                {
+                    dog1.SetActive(false);
+                }
+
+                if (dogNumber == 2)
+                {
+                    dog2.SetActive(true);
+                }
+                else
+                {
+                    dog2.SetActive(false);
+                }
+
+                if (dogNumber == 3)
+                {
+                    dog3.SetActive(true);
+                }
+                else
+                {
+                    dog3.SetActive(false);
+                }
+
+                canChange = false;
+            }
         }
              
         if (Input.GetKeyDown(KeyCode.E))
         {
+            canChange = true;
             b3v1.SetActive(true);
             b3v2.SetActive(false);
             b2v1.SetActive(true);
