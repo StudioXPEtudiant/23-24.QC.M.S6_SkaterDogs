@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [SerializeField]private GameObject me;
    [SerializeField] private int health;
    [SerializeField] private int numberToDecrease;
 
@@ -12,7 +13,24 @@ public class Health : MonoBehaviour
     {
         health = 100;
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+       // if (other.CompareTag("Cattack")) ;
+       // {
+            
+           // StartCoroutine(AttackWait());
+        //}
+    }
+
+    private void Update()
+    {
+        if (health < 0)
+        {
+            me.SetActive(false);
+        }
+    }
+
     [ContextMenu("Decrease")]
     public void Decrease()
     {
@@ -23,5 +41,12 @@ public class Health : MonoBehaviour
     public void Die()
     {
         health = health - numberToDecrease;
+    }
+    
+    private IEnumerator AttackWait()
+    {
+        Decrease();
+        yield return new WaitForSeconds(0.3f);
+        
     }
  }

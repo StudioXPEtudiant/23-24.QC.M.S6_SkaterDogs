@@ -17,4 +17,24 @@ public class StopLava : MonoBehaviour
 
 
     }
+    void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            lava.SetActive(false);
+            UI.SetActive(false);
+        }
+
+
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            lava.SetActive(false);
+            UI.SetActive(false);
+        }
+
+
+    }
 }
