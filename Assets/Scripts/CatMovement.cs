@@ -30,6 +30,13 @@ public class CatMovement : MonoBehaviour
    playerInBox = true;
   }
  }
+ private void OnTriggerStay(Collider other)
+ {
+  if (other.CompareTag("Player"))
+  { 
+   playerInBox = true;
+  }
+ }
  
  private void OnTriggerExit(Collider other)
  {

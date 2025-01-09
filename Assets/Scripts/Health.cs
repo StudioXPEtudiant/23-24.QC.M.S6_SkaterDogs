@@ -11,16 +11,16 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        health = 100;
+        health = 300;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-       // if (other.CompareTag("Cattack")) ;
-       // {
-            
-           // StartCoroutine(AttackWait());
-        //}
+        if (other.CompareTag("Cattack")) ;
+        {
+            Decrease();
+            StartCoroutine(AttackWait());
+        }
     }
 
     private void Update()
@@ -34,19 +34,15 @@ public class Health : MonoBehaviour
     [ContextMenu("Decrease")]
     public void Decrease()
     {
-        health = health - numberToDecrease;
+        health = health - (numberToDecrease);
     }
     
-    [ContextMenu("Die")]
-    public void Die()
-    {
-        health = health - numberToDecrease;
-    }
+    
     
     private IEnumerator AttackWait()
     {
-        Decrease();
-        yield return new WaitForSeconds(0.3f);
+        
+        yield return new WaitForSecondsRealtime(0.3f);
         
     }
  }
