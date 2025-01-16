@@ -5,22 +5,23 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [SerializeField]private bool detectCat;
     [SerializeField]private GameObject me;
    [SerializeField] private int health;
    [SerializeField] private int numberToDecrease;
 
     private void Start()
     {
-        health = 300;
+        health = 100;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Cattack")) ;
+        if (other.CompareTag("Cattacker")) ;
         {
-            Decrease();
-            StartCoroutine(AttackWait());
+            //Decreased();
         }
+       
     }
 
     private void Update()
@@ -32,9 +33,11 @@ public class Health : MonoBehaviour
     }
 
     [ContextMenu("Decrease")]
-    public void Decrease()
+    public void Decreased()
     {
+        detectCat = true;
         health = health - (numberToDecrease);
+        StartCoroutine(AttackWait());
     }
     
     

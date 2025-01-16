@@ -7,8 +7,8 @@ TagManager:
   - Cat
   - AttackRangeChing
   - AttackRangePtiou
-  - Cattack
   - Ptal
+  - Cattacker
   layers:
   - Default
   - TransparentFX
