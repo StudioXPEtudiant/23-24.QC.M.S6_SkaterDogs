@@ -9,6 +9,7 @@ TagManager:
   - AttackRangePtiou
   - Ptal
   - Cattacker
+  - Lava
   layers:
   - Default
   - TransparentFX
